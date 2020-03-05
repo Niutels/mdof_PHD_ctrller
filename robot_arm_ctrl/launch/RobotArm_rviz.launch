@@ -1,0 +1,9 @@
+<launch>
+
+<!-- <arg name="model" default="$(find rrbot_description)/urdf/rrbot.xacro"/>
+<param name="robot_description" command="$(find xacro)/xacro inorder $(arg model)" />
+ -->
+ <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_arm_ctrl)/launch/RobotArm.rviz" />
+ 
+
+</launch>

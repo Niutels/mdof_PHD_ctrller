@@ -1,0 +1,13 @@
+params:
+ Kp: 1000
+ zeta: 0.6
+ n: 0.001
+ d: 0.003
+ m_endeff: 200
+ m_set_l1: 10
+ m_set_l2: 10
+ ONE_DOF: False
+ TWO_DOF: False
+ OPE_SPC: True
+ MSD: False
+ PHD: True

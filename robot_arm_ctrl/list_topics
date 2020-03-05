@@ -1,0 +1,3 @@
+/joint_states/position  /visualization_marker_pos/pose/position /visualization_marker_target/pose/position 
+/visualization_marker_pos/pose/position/x /visualization_marker_pos/pose/position/y /visualization_marker_target/pose/position/x /visualization_marker_target/pose/position/y 
+/joint_states/position  

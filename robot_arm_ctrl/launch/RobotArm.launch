@@ -1,0 +1,29 @@
+<launch>
+
+  <arg name="robot" default="rrbot" />
+  <param name="/use_sim_time" value="true"/>
+    <rosparam file="$(find robot_arm_ctrl)/config/params.yaml" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find robot_arm_ctrl)/gazebo_world/empty_world.world"/>
+    <arg name="paused" value="true" />
+  </include>
+    <group ns="params">
+      <rosparam file="$(find robot_arm_ctrl)/config/params.yaml" />
+    </group>
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find rrbot_description)/urdf/rrbot.xacro'" /> 
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <rosparam param="source_list">['/robot_joints']</rosparam>
+    <rosparam param="rate">1000</rosparam>
+
+  </node>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model rrbot -param robot_description
+    -J joint2 0.1
+    -J   joint1 0.1
+          -unpause"/>
+
+
+</launch>

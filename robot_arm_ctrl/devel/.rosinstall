@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nicolas_b/ros_ws/src/robot_arm_ctrl/devel/setup.sh
